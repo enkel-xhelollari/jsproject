@@ -12,157 +12,175 @@
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
       crossorigin="anonymous"
     />
-    <!-- Icons -->
-    <script
-      src="https://kit.fontawesome.com/fbacf86927.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>ATIS Blog</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="mainnav col-md-8">
-          <!-- Navbar -->
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#"><strong>ATIS Blog</strong></a>
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarTogglerDemo02"
-                aria-controls="navbarTogglerDemo02"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <div class="form-check form-switch">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="flexSwitchCheckDefault"
-                      />
-                      <label
-                        class="form-check-label"
-                        for="flexSwitchCheckDefault"
-                      ></label>
-                    </div>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#"
-                      ><i class="fas fa-user"></i> CONTACT US</a
-                    >
-                  </li>
-                </ul>
-                <form class="d-flex">
-                  <input
-                    class="form-control me-2"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-                  />
-                  <button class="btn btn-outline-dark" type="submit">
-                    Search
-                  </button>
-                </form>
-              </div>
-            </div>
-          </nav>
-        </div>
-        <div class="col-md-2"></div>
-      </div>
 
-      <!-- Content -->
-      <div class="row mt-5">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-          <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-              <div class="card h-100">
-                <img src="..." class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    This is a longer card with supporting text below as a
-                    natural lead-in to additional content. This content is a
-                    little bit longer.
-                  </p>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Icons -->
+
+    <title>Blog</title>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav id="navbar">
+      <h3 class="logo">
+        <a href=""><i class="fas fa-rocket"></i> Blog</a>
+      </h3>
+      <ul>
+        <li>
+          <a id="myBtn"><i class="fas fa-plus-circle"></i> Add Post</a>
+
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content modalwidth">
+                  <span class="close">&times;</span>
+
+                  <h3><i class="fas fa-plus-circle"></i> Add post</h3>
+                  <div class="title">
+                    <label for="title"></label>
+                    <input
+                      class="title-input"
+                      type="text"
+                      placeholder="Title"
+                      name="title"
+                      required
+                    />
+                  </div>
+                  <div class="file">
+                    <label for="myfile"></label>
+                    <input type="file" id="myfile" name="myfile" required />
+                  </div>
+                  <div class="content">
+                    <textarea
+                      name=""
+                      id=""
+                      cols="38"
+                      rows="5"
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="upload">
+                    <a class="upload-button"
+                      ><i class="fas fa-upload"> Upload</i></a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col">
-              <div class="card h-100">
-                <img src="..." class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a short card.</p>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a class="dropbtn"><i class="fas fa-user"></i> User</a>
+          <div class="dropdown-content">
+            <a href="#logout"> <i class="fas fa-sign-out-alt"></i> Log out</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- SEARCH NAV  -->
+
+    <div class="container m-5">
+      <div class="row justify-content-center">
+        <div class="offset-1 col-md-10">
+          <div id="navbar">
+            <div class="search-container">
+              <form>
+                <input
+                  class="searchspace"
+                  type="text"
+                  placeholder="Search..."
+                  name="search"
+                />
+                <button class="btnsearch" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
+            </div>
+            <ul>
+              <li>
+                <span class="dropdown sorting">
+                  <a class="dropbtn"><i class="fas fa-sort"></i> Sort by</a>
+                  <div class="dropdown-content">
+                    <a>Name (A-Z)</a>
+                    <a> Date</a>
+                  </div>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="spacing"></div>
+
+        <!-- CARDS -->
+        <div class="offset-1 col-md-10">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+                <img
+                  src="./img/outrun-vaporwave-hd-wallpaper-preview.jpg"
+                  alt="Avatar"
+                />
+                <div class="container">
+                  <h4>
+                    <b><a href="">Title</a></b>
+                  </h4>
+                  <p>DATE</p>
+                  <p>Content</p>
                 </div>
               </div>
             </div>
-            <div class="col">
-              <div class="card h-100">
-                <img src="..." class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    This is a longer card with supporting text below as a
-                    natural lead-in to additional content.
-                  </p>
+            <div class="col-md-4">
+              <div class="card">
+                <img
+                  src="./img/digital-digital-art-artwork-fantasy-art-drawing-hd-wallpaper-thumb.jpg"
+                  alt="Avatar"
+                />
+                <div class="container">
+                  <h4>
+                    <b><a href="">Title</a></b>
+                  </h4>
+                  <p>DATE</p>
+                  <p>Content</p>
                 </div>
               </div>
             </div>
-            <div class="col">
-              <div class="card h-100">
-                <img src="..." class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    This is a longer card with supporting text below as a
-                    natural lead-in to additional content. This content is a
-                    little bit longer.
-                  </p>
+            <div class="col-md-4">
+              <div class="card">
+                <img
+                  src="./img/outrun-vaporwave-hd-wallpaper-preview.jpg"
+                  alt="Avatar"
+                />
+                <div class="container">
+                  <h4>
+                    <b><a href="">Title</a></b>
+                  </h4>
+                  <p>DATE</p>
+                  <p>Content</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-md-2"></div>
-      </div>
-      <div class="row">
-        <div class="col-md-5"></div>
-        <div class="col-md-2 mt-5">
-          <nav aria-label="Page navigation example">
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="col-md-5"></div>
       </div>
     </div>
 
     <!-- JavaScript Bundle with Popper -->
+
+    <script src="script.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/fbacf86927.js"
       crossorigin="anonymous"
     ></script>
   </body>
