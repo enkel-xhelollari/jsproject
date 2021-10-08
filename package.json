@@ -2,13 +2,16 @@
   "name": "js-project",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "server": "json-server --watch db.json"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "parcel": "^2.0.0-rc.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0"
   }
 }

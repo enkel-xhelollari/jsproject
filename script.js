@@ -1,11 +1,25 @@
-// Get the modal
-var modal = document.getElementById("myModal");
+import * as controller from './js/controller';
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+// BUTTONS
+controller.init();
+const logout = document.querySelector(".log-out-btn");
+const search = document.querySelector(".btnsearch");
+const sortByName = document.querySelector(".sortbyname");
+const sortByDate = document.querySelector(".sortbydate");
+const title = document.querySelector(".post-title");
+const upload = document.querySelector(".upload-button");
+const signin = document.getElementById("#signin-btn");
+const signup = document.getElementById("#signup-btn");
+const switchToSignIn = document.querySelector(".switch-to-signin-btn");
+const switchToSignUp = document.querySelector(".switch-to-signup-btn");
+const edit = document.querySelector(".editbtn");
+const del = document.querySelector(".deletebtn");
+const logo = document.querySelector(".blog-logo");
+const modal = document.getElementById("myModal");
+const btn = document.getElementById("myBtn");
+const span = document.getElementsByClassName("close")[0];
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // When the user clicks on the button, open the modal
 btn.onclick = function () {
@@ -23,3 +37,4 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
+
