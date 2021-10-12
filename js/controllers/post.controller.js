@@ -1,5 +1,6 @@
 import {PostService} from "../services/post.service";
 import {Post} from "../models/Post";
+import {postsContainer} from '../utils/dom_elements'
 
 export function init() {
     const postService = new PostService();
@@ -19,7 +20,6 @@ export function init() {
 
 // funksion qe i ve elementet e postit ne html
 function renderPosts(posts) {
-    const postsContainer = document.getElementById('posts');
 
     posts.forEach(post => {
         const postDiv = post.renderHTML();

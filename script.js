@@ -1,23 +1,12 @@
 import * as controller from './js/controllers/post.controller.js';
+import {modal} from './js/utils/dom_elements';
+import {btn} from './js/utils/dom_elements';
+import {span} from './js/utils/dom_elements';
 
-// BUTTONS
+
+
 controller.init();
-const logout = document.querySelector(".log-out-btn");
-const search = document.querySelector(".btnsearch");
-export const sortByName = document.querySelector(".sortbyname");
-const sortByDate = document.querySelector(".sortbydate");
-const title = document.querySelector(".post-title");
-const upload = document.querySelector(".upload-button");
-const signin = document.getElementById("#signin-btn");
-const signup = document.getElementById("#signup-btn");
-const switchToSignIn = document.querySelector(".switch-to-signin-btn");
-const switchToSignUp = document.querySelector(".switch-to-signup-btn");
-const edit = document.querySelector(".editbtn");
-const del = document.querySelector(".deletebtn");
-const logo = document.querySelector(".blog-logo");
-const modal = document.getElementById("myModal");
-const btn = document.getElementById("myBtn");
-const span = document.getElementsByClassName("close")[0];
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
