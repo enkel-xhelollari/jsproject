@@ -117,12 +117,21 @@ li a {
   padding-right: 55px;
 }
 
-.file {
+.select-options {
   margin: 10px;
+  padding-left: 115px;
+  padding-right: 100px;
 }
+
+.opt {
+text-align: left;
+
+}
+
 
 .content {
   margin: 10px;
+
 }
 
 .loginbuttondiv {
@@ -144,6 +153,7 @@ li a {
 .loginbutton:hover {
   color: #ddd;
 }
+
 
 /* Image  */
 

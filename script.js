@@ -1,10 +1,10 @@
-import * as controller from './js/controller';
+import * as controller from './js/controllers/post.controller.js';
 
 // BUTTONS
 controller.init();
 const logout = document.querySelector(".log-out-btn");
 const search = document.querySelector(".btnsearch");
-const sortByName = document.querySelector(".sortbyname");
+export const sortByName = document.querySelector(".sortbyname");
 const sortByDate = document.querySelector(".sortbydate");
 const title = document.querySelector(".post-title");
 const upload = document.querySelector(".upload-button");
