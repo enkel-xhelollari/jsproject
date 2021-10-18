@@ -1,38 +1,63 @@
 import {PostService} from "../services/post.service";
 import {Post} from "../models/Post";
-import {postsContainer} from '../utils/dom_elements'
+import {postsContainer} from '../utils/dom_elements';
+import {searchBtn} from '../utils/dom_elements';
+import {searchSpace} from '../utils/dom_elements';
 
-export function init() {
-    const postService = new PostService();
+export class PostController {
 
-        postService.fetchPosts().then(data => {
-            const posts = data.map(post => convertToPost(post))
-            console.log(posts)
-            // ?title_like=b&_page=1&_limit=10
-            renderPosts(posts)
-    })
+    constructor() {
+        this.postService = new PostService();
+        this.init()
+    }
 
-// funksion vec per pagination
+    init() {
+        this.postService.fetchPostsPaginated(this.postService.pagination).then(response => {
+            console.log(response)
+            this.postService.pagination = {...response.pagination};
+            const posts = response.result.map(post => this.convertToPost(post));
+            this.renderPosts(posts);
+        })
 
-// funksion vec per sorting
+    }
 
-// funksion vec per searching
+    convertToPost(postObj) {
+        return new Post(postObj);
 
-// funksion qe i ve elementet e postit ne html
-function renderPosts(posts) {
+    }
 
-    posts.forEach(post => {
-        const postDiv = post.renderHTML();
-        postsContainer.appendChild(postDiv);
-    })
+    setSearch(search) {
+        this.postService.pagination = {...this.postService.pagination, search};
+    }
+
+    searchPosts(search) {
+        this.postService.fetchPostsPaginated({search, page: 1, limit: 8}).then(response => {
+            console.log(response)
+            this.postService.pagination = {...response.pagination};
+            const posts = response.result.map(post => this.convertToPost(post));
+            this.renderPosts(posts);
+        })
+    }
+
+    renderPosts(posts) {
+        postsContainer.innerHTML = ''
+        posts.forEach(post => {
+            const postDiv = post.renderHTML();
+            postsContainer.appendChild(postDiv);
+        })
+    }
+
+/*
+* paginatePosts(page,limit) {
+* this.postService.fetchPostsPaginated({search: this.postsService.pagination, page, limit}).then(response => {
+            console.log(response)
+            this.postService.pagination = {...response.pagination};
+            const posts = response.result.map(post => this.convertToPost(post));
+            this.renderPosts(posts);
+        })
+
+* */
 }
-
-function convertToPost(postObj) {
-    return new Post(postObj);
-}
-
-}
-
 
 
 // const pagination = {

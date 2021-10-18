@@ -30,7 +30,7 @@
       </h3>
       <ul>
         <li>
-          <a id="myBtn"><i class="fas fa-plus-circle"></i> Add Post</a>
+          <a id="add-post-btn"><i class="fas fa-plus-circle"></i> Add Post</a>
 
           <div class="row justify-content-center">
             <div class="col-md-8">
@@ -102,12 +102,13 @@
             <div class="search-container">
               <form>
                 <input
+                        id="search-space"
                   class="searchspace"
                   type="text"
                   placeholder="Search..."
                   name="search"
                 />
-                <button class="btnsearch" type="submit">
+                <button class="btnsearch" type="button">
                   <i class="fas fa-search"></i>
                 </button>
               </form>
@@ -131,7 +132,10 @@
 
         <!-- CARDS -->
         <div class="offset-1 row justify-content-center"  id="posts">
-
+          <main>
+            <div class="list" id="list"></div>
+            <div class="pagenumbers" id="pagination"></div>
+          </main>
           </div>
         </div>
       </div>
