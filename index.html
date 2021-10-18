@@ -101,6 +101,7 @@
           <div id="navbar">
             <div class="search-container">
               <form>
+                <div style="position: relative">
                 <input
                         id="search-space"
                   class="searchspace"
@@ -108,8 +109,10 @@
                   placeholder="Search..."
                   name="search"
                 />
+                  <i class="search-icon fas fa-search"></i>
+                </div>
                 <button class="btnsearch" type="button">
-                  <i class="fas fa-search"></i>
+
                 </button>
               </form>
             </div>
@@ -132,11 +135,22 @@
 
         <!-- CARDS -->
         <div class="offset-1 row justify-content-center"  id="posts">
-          <main>
-            <div class="list" id="list"></div>
-            <div class="pagenumbers" id="pagination"></div>
-          </main>
+<!--          <main>-->
+<!--            <div class="list" id="list"></div>-->
+<!--            <div class="pagenumbers" id="pagination"></div>-->
+<!--          </main>-->
+
+        </div>
+
+        <div class="offset-1 row justify-content-center pagination-buttons">
+          <div class="col-md-10 text-center">
+            <button class="previous-btn"><i class="fas fa-arrow-left"></i></button>
+            <button class="current-btn">0</button>
+            <button class="next-btn"><i class="fas fa-arrow-right"></i></button>
           </div>
+
+        </div>
+
         </div>
       </div>
 

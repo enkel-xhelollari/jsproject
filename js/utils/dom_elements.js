@@ -1,5 +1,4 @@
 export const logout = document.querySelector(".log-out-btn");
-export const searchBtn = document.querySelector(".btnsearch");
 export const searchSpace = document.querySelector(".searchspace");
 export const sortByName = document.querySelector(".sortbyname");
 export const sortByDate = document.querySelector(".sortbydate");
@@ -16,3 +15,7 @@ export const postsContainer = document.getElementById('posts');
 export const modal = document.getElementById("myModal");
 export const addPostBtn = document.getElementById("add-post-btn");
 export const closeModal = document.getElementsByClassName("close")[0];
+export const previousBtn = document.querySelector(".previous-btn");
+export const currentBtn = document.querySelector(".current-btn");
+export const nextBtn = document.querySelector(".next-btn");
+

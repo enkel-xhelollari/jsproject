@@ -2,19 +2,17 @@ import * as postsController from './js/controllers/post.controller.js';
 import {modal, postsContainer} from './js/utils/dom_elements';
 import {addPostBtn} from './js/utils/dom_elements';
 import {closeModal} from './js/utils/dom_elements';
-import {searchBtn} from './js/utils/dom_elements';
 import {searchSpace} from './js/utils/dom_elements';
 import {PostController} from "./js/controllers/post.controller.js";
-
-
-
-function init() {
-  const postsController = new PostController();
+import {previousBtn} from './js/utils/dom_elements';
+import {currentBtn} from './js/utils/dom_elements';
+import {nextBtn} from './js/utils/dom_elements';
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+function init() {
+  const postsController = new PostController();
 
 
 // When the user clicks on the button, open the modal
@@ -34,12 +32,14 @@ function init() {
     }
   };
 
-  searchBtn.addEventListener('click', () => {
+  searchSpace.addEventListener('keyup', () => {
     postsController.setSearch(searchSpace.value)
     postsController.searchPosts(searchSpace.value);
   })
 
 }
+
+
 
 init()
 

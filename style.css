@@ -175,23 +175,22 @@ input {
 .search-container {
   text-align: center;
   width: 65%;
-  padding-bottom: 12px;
+  padding-top: 10px;
+  padding-left: 30px;
 }
 
-.btnsearch {
-  border-radius: 5px;
-  color: #fff;
-  background-color: #333;
-  border: none;
-  padding: 5px;
-}
 
-.btnsearch:hover {
-  color: #ddd;
-}
 
 .searchspace {
-  width: 90%;
+  width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  color: #333;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
 }
 
 .sorting {
@@ -354,7 +353,19 @@ input {
 }
 
 /* //////////////////////////////////////////////////////////////////////////////////////////////// */
+.previous-btn, .current-btn, .next-btn {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #333;
+}
 
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////*/
 .signupp {
   margin-top: 30px;
 }

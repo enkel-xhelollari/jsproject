@@ -1,7 +1,6 @@
 import {PostService} from "../services/post.service";
 import {Post} from "../models/Post";
 import {postsContainer} from '../utils/dom_elements';
-import {searchBtn} from '../utils/dom_elements';
 import {searchSpace} from '../utils/dom_elements';
 
 export class PostController {
@@ -47,16 +46,16 @@ export class PostController {
         })
     }
 
-/*
-* paginatePosts(page,limit) {
-* this.postService.fetchPostsPaginated({search: this.postsService.pagination, page, limit}).then(response => {
-            console.log(response)
-            this.postService.pagination = {...response.pagination};
-            const posts = response.result.map(post => this.convertToPost(post));
-            this.renderPosts(posts);
-        })
 
-* */
+ paginatePosts(page,limit) {
+     this.postService.fetchPostsPaginated({search: this.postsService.pagination, page, limit}).then(response => {
+         console.log(response)
+         this.postService.pagination = {...response.pagination};
+         const posts = response.result.map(post => this.convertToPost(post));
+         this.renderPosts(posts);
+     })
+
+ }
 }
 
 
