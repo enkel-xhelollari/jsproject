@@ -18,4 +18,4 @@ export const closeModal = document.getElementsByClassName("close")[0];
 export const previousBtn = document.querySelector(".previous-btn");
 export const currentBtn = document.querySelector(".current-btn");
 export const nextBtn = document.querySelector(".next-btn");
-
+export const pagination = document.getElementById('pagination');

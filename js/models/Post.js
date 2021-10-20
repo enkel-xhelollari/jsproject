@@ -7,6 +7,7 @@ export class Post {
         this.image = obj.image;
     }
 
+
     renderHTML() {
         const template = `
                 <img class="image-wid"
@@ -25,5 +26,6 @@ export class Post {
         card.className = 'card col-md-5'
         card.insertAdjacentHTML('afterbegin', template);
         return card;
+
     }
 }

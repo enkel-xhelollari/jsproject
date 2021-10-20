@@ -1,23 +1,52 @@
 import {PostService} from "../services/post.service";
 import {Post} from "../models/Post";
-import {postsContainer} from '../utils/dom_elements';
+import {pagination, postsContainer} from '../utils/dom_elements';
 import {searchSpace} from '../utils/dom_elements';
+import {Pagination} from "../models/Pagination";
 
 export class PostController {
 
     constructor() {
+        this.paginationEl = new Pagination()
         this.postService = new PostService();
-        this.init()
+        this.init();
     }
 
     init() {
         this.postService.fetchPostsPaginated(this.postService.pagination).then(response => {
-            console.log(response)
             this.postService.pagination = {...response.pagination};
             const posts = response.result.map(post => this.convertToPost(post));
+
             this.renderPosts(posts);
+            this.renderPagination(response.pagination);
+
         })
 
+    }
+
+    renderPagination(p) {
+        pagination.innerHTML = '';
+        pagination.appendChild(this.paginationEl.renderHTML(p.page, p.limit, p.total));
+        const previous = document.getElementById('previous');
+        const next = document.getElementById('next');
+        previous.addEventListener('click', () => {
+            if(p.page > 1) {
+                this.postService.pagination = {
+                    ...this.postService.pagination,
+                    page: p.page - 1,
+                }
+                this.init();
+            }
+        });
+        next.addEventListener('click', () => {
+            if(p.page < this.paginationEl.getTotalPages(p.total, p.limit)) {
+                this.postService.pagination = {
+                    ...this.postService.pagination,
+                    page: p.page + 1,
+                }
+                this.init();
+            }
+        });
     }
 
     convertToPost(postObj) {
@@ -35,6 +64,7 @@ export class PostController {
             this.postService.pagination = {...response.pagination};
             const posts = response.result.map(post => this.convertToPost(post));
             this.renderPosts(posts);
+            this.renderPagination(response.pagination)
         })
     }
 
@@ -57,13 +87,3 @@ export class PostController {
 
  }
 }
-
-
-// const pagination = {
-//     search: '',
-//     sort: '',
-//     page: 1,
-//     limit: 10,
-//     total: 0
-// }
-
