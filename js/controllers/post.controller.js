@@ -10,6 +10,25 @@ export class PostController {
         this.paginationEl = new Pagination()
         this.postService = new PostService();
         this.init();
+        upload.addEventListener('click', () => {
+            const newPost = {
+                title:titleInput.value,
+                image: option.value,
+                description: text.value
+            }
+            fetch('http://localhost:3000/posts',
+                {
+                    method: 'POST',
+                    mode: 'cors',
+                    cache: 'no-cache',
+                    credentials: 'same-origin',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    redirect: 'follow',
+                    referrerPolicy: 'no-referrer',
+                    body: JSON.stringify(newPost)}).then(res => console.log(res));
+        })
     }
 
     init() {

@@ -7,7 +7,6 @@ export class Pagination {
         return Math.ceil(+total / +limit)
     }
 
-
     renderHTML(page, limit, total) {
         const template = `
           <div class="col-md-10 text-center">
